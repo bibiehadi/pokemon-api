@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pokemon</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://pokeapi.co/static/pokeapi_256.3fa72200.png"
+            alt="Logo"
+            width="120"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button id="btn-search" class="btn btn-outline-warning" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row" id="pokemons"></div>
+    </div>
+
+    <div
+      class="modal fade bd-example-modal-lg"
+      id="modalPokemon"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modal-content">
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 container-img">
+                  <div class="shadow-lg mb-1 poke-img">
+                    <img
+                      id="modal-img"
+                      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                  </div>
+                  <h3 class="modal-poke-name">
+                    <span id="poke-name">Pikachu</span>
+                  </h3>
+                </div>
+                <div class="col-md-6 pokemonStats">
+                  <div
+                    id="carouselExampleControls"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                  >
+                    <div class="carousel-inner">
+                      <div class="carousel-item poke active">
+                        <div class="row poke-detail">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h6 class="modal-title">Height :</h6>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 class="modal-title">Weight :</h6>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h6 id="modal-height">0</h6>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 id="modal-weight">0</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row poke-detail">
+                          <div class="row">
+                            <h6 class="modal-title">Type :</h6>
+                          </div>
+                          <div class="row">
+                            <h6 id="modal-type">Banyu</h6>
+                          </div>
+                        </div>
+                        <div class="row poke-detail">
+                          <div class="row">
+                            <h6 class="modal-title">Abilities :</h6>
+                          </div>
+                          <div class="row">
+                            <h6 id="modal-abilities">
+                              <span>Memanah</span> <span>Memasak</span>
+                            </h6>
+                          </div>
+                        </div>
+                        <div class="row poke-detail">
+                          <div class="row">
+                            <h6 class="modal-title">Strengths :</h6>
+                          </div>
+                          <div class="row">
+                            <h6 id="modal-strengths">
+                              <span>Memanah</span> <span>Memasak</span>
+                            </h6>
+                          </div>
+                        </div>
+                        <div class="row poke-detail">
+                          <div class="row">
+                            <h6 class="modal-title">Weakness :</h6>
+                          </div>
+                          <div class="row">
+                            <h6 id="modal-weakness">
+                              <span>Memanah</span> <span>Memasak</span>
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <h5 class="text-center">Base-Stats</h5>
+                        <canvas id="pokemonStats"></canvas>
+                      </div>
+                      <div class="carousel-item">
+                        <h5>Evolution</h5>
+                        <div class="row"></div>
+                      </div>
+                    </div>
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselExampleControls"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselExampleControls"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

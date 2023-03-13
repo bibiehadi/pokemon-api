@@ -1,0 +1,122 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f6e6bd;
+  max-width: 100%;
+}
+
+.navbar {
+  background-color: #315a7b;
+}
+
+.container {
+  margin: 20px auto;
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: lightgoldenrodyellow;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.pokemonStats {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  padding: 0;
+}
+
+.container-img {
+  margin: auto;
+}
+
+.btn-close {
+  float: right;
+}
+
+.poke-img {
+  max-width: 100%;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #f6e6bd;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-poke-name {
+  text-align: center;
+  padding: 1em;
+}
+
+.poke {
+  padding: 0.2em;
+}
+
+.poke-detail {
+  margin: 0.2em;
+}
+
+.badge .border {
+  border-color: #4a3910;
+  color: #315a7b;
+}
+
+.grass {
+  background-color: #d5f68b;
+}
+
+.grass .poke-img {
+  background-color: #b4cd6a;
+}
+
+.fire {
+  background-color: #fc945c;
+}
+
+.fire .poke-img {
+  background-color: #ff5900dc;
+}
+
+.water {
+  background-color: #a4cdff;
+}
+
+.water .poke-img {
+  background-color: #7bacee;
+}
+
+.electric {
+  background-color: #f6e652;
+}
+
+.electric .poke-img {
+  background-color: #f6bd20;
+}
+
+.poison {
+  background-color: #a483c5;
+}
+
+.poison .poke-img {
+  background-color: #7b62ac;
+}
+
+.ground {
+  background-color: #8b6218;
+}
+
+.ground .poke-img {
+  background-color: #4a3910;
+}
+
+.test {
+  border: #315a7b solid;
+}
